@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>麻雀並べ替え — Mahjong Sort</title>
+  <meta name="description" content="麻雀牌並べ替え練習ゲーム。手牌を正しい順序に並べる速さを競う。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <h1 class="app-title" data-i18n="title">麻雀並べ替え</h1>
+        <p class="app-subtitle" data-i18n="subtitle">手牌を正しい順序に並べましょう</p>
+      </div>
+      <div class="header-right">
+        <div class="lang-toggle">
+          <button id="btn-ja" class="lang-btn active">JP</button>
+          <button id="btn-en" class="lang-btn">EN</button>
+        </div>
+        <button id="theme-btn" class="icon-btn" title="Toggle theme" data-i18n-title="theme">🌙</button>
+      </div>
+    </header>
+
+    <!-- Controls -->
+    <section class="controls">
+      <div class="control-group">
+        <label for="mode-select" data-i18n="mode">モード</label>
+        <select id="mode-select">
+          <option value="all" data-i18n="modeAll">全牌種</option>
+          <option value="simplified" data-i18n="modeSimplified">数牌のみ</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="count-select" data-i18n="tiles">牌</label>
+        <select id="count-select">
+          <option value="13" data-i18n="count13">13枚</option>
+          <option value="14" data-i18n="count14">14枚</option>
+        </select>
+      </div>
+      <button id="new-hand-btn" class="btn btn-primary" data-i18n="newHand">新しい手牌</button>
+    </section>
+
+    <!-- Timer -->
+    <div class="timer-bar">
+      <span class="timer-label" data-i18n="timer">タイム</span>
+      <span id="timer-value" class="timer-value">0.0秒</span>
+    </div>
+
+    <!-- Tile area -->
+    <main class="tile-area">
+      <div id="tile-row" class="tile-row" role="list" aria-label="手牌"></div>
+    </main>
+
+    <!-- Hint -->
+    <div id="hint-container" class="hint-container"></div>
+
+    <!-- Message -->
+    <div id="message" class="message" role="alert" aria-live="polite"></div>
+
+    <!-- Action buttons -->
+    <div class="action-buttons">
+      <button id="check-btn" class="btn btn-secondary" data-i18n="checkOrder">確認する</button>
+      <button id="hint-btn" class="btn btn-ghost" data-i18n="hintMode">ヒント表示</button>
+    </div>
+
+    <!-- Best times -->
+    <aside class="best-times">
+      <h2 class="best-times-title" data-i18n="bestTimes">ベストタイム</h2>
+      <ol id="best-times-list" class="best-times-list">
+        <li class="no-record" data-i18n="noRecord">記録なし</li>
+      </ol>
+    </aside>
+
+    <!-- Legend -->
+    <footer class="legend">
+      <div class="legend-item">
+        <span class="legend-tile suit-man">1m</span>
+        <span class="legend-label" data-i18n="man">萬子</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-tile suit-pin">1p</span>
+        <span class="legend-label" data-i18n="pin">筒子</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-tile suit-sou">1s</span>
+        <span class="legend-label" data-i18n="sou">索子</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-tile suit-honor">東</span>
+        <span class="legend-label" data-i18n="honor">字牌</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
