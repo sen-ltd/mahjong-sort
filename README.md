@@ -58,3 +58,10 @@ mahjong-sort/
 ## License
 
 MIT © 2026 SEN LLC (SEN 合同会社)
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/mahjong-sort/
+- 📝 dev.to: https://dev.to/sendotltd/a-mahjong-tile-sorting-practice-game-34-tiles-strict-ordering-timer-based-4a3m
+<!-- /sen-publish:links -->
